@@ -4,10 +4,13 @@
 
 {% block body %}
 <h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold"> FORUM</h1>
-{% for message in messages %}
-{% if message['parent'] is null %}
-<p>{{message['@id']}} {{message['titre']}} {{message['datePoste']}}</p>
-{% endif %}
+Liste de tout les messages <a href="https://s3-4448.nuage-peda.fr/exempleApiForum/public/listeMessages">-> </a>
+Liste de tout les messages <a href="https://s3-4448.nuage-peda.fr/exempleApiForum/public/listeUsers">-> </a>
+
+{% for i in 1..30 %}
+</br>
+</br>
+<li><a href="https://s3-4448.nuage-peda.fr/exempleApiForum/public/messages">Message {{ i }}</a></li>
 {% endfor %}
 
 {% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}}Test{% endblock %}
+
+{% block body %}
+<h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold"> Listes des users</h1>
+{% for user in users  %}
+
+
+<li>{{ loop.index }} Id du user - {{user['@id']}} <br>
+
+
+</li>
+
+
+{% endfor %}
+
+{% endblock %}

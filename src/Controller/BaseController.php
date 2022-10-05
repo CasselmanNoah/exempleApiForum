@@ -19,6 +19,36 @@ class BaseController extends AbstractController
             'messages' => $content
         ]);
     }
+    #[Route('/listeMessages', name: 'listeMessages')]
+    public function test(): Response
+    {
+        $content = $this->getMessages();
+        dump($content);
+        $content = $content['hydra:member'];
+        return $this->render('base/listeMessages.html.twig', [
+            'messages' => $content
+        ]);
+    }
+    #[Route('/listeUsers', name: 'listeUsers')]
+    public function listeUsers(): Response
+    {
+        $content = $this->getMessages();
+        dump($content);
+        $content = $content['hydra:member'];
+        return $this->render('base/listeUsers.html.twig', [
+            'users' => $content
+        ]);
+    }
+    #[Route('/messages', name: 'messages')]
+    public function message(): Response
+    {
+        $content = $this->getMessages();
+        dump($content);
+        $content = $content['hydra:member'];
+        return $this->render('base/messages.html.twig', [
+            'messages' => $content
+        ]);
+    }
 
     public function getMessages(){
         $client = HttpClient::create();

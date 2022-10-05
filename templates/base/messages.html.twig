@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}}Test{% endblock %}
+
+{% block body %}
+<h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold"> Message</h1>
+{% for message in messages  %}
+
+
+<li>{{ loop.index }} Id du message - {{message['@id']}} <br>
+    
+    <ul>
+       Contenu du messages - {{ message['titre'] }}
+    </ul>
+    <ul>
+        datePoste - {{message['datePoste']}}
+    </ul>
+</li>
+
+
+
+{% endfor %}
+
+{% endblock %}
